@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ilumiluz Lab — Te ajudando com seu projeto em 3D</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="Ilumiluz Lab">
+      <img src="assets/img/logo/logo.svg" alt="Ilumiluz Lab">
+    </a>
+  </header>
+
+  <main>
+
+    <section class="hero" id="hero">
+      <div class="hero-canvas" id="hero-canvas" aria-hidden="true"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title">
+          <span class="reveal-word">Te</span> <span class="reveal-word">ajudando</span> <span class="reveal-word">com</span> <span class="reveal-word">seu</span> <span class="reveal-word">projeto</span> <span class="reveal-word">em</span> <span class="reveal-word">3D</span>
+        </h1>
+        <p class="eyebrow reveal-fade">Feito pra quem está começando no mercado de joias</p>
+        <p class="reveal-fade">Você imagina a peça. A gente transforma em modelo 3D e imprime em resina pronta pra fundir, sem você precisar passar anos na bancada.</p>
+        <a href="https://wa.me/5511975155235?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20projeto%20de%20joia." target="_blank" rel="noopener noreferrer" class="btn-primary reveal-fade">Pedir orçamento</a>
+      </div>
+    </section>
+
+    <section class="dor container">
+      <div class="dor-grid">
+        <div class="dor-text">
+          <p class="eyebrow">O ponto de partida</p>
+          <h2>Criar joia não devia ser tão difícil pra começar</h2>
+          <p>Você tem as ideias, o olhar, a vontade. Mas o caminho tradicional cobra caro. São anos aprendendo a modelar na bancada, peça refeita várias vezes, tempo e material que você ainda não tem de sobra.
+
+A tecnologia 3D encurta esse caminho, e é exatamente por isso que a gente existe.</p>
+        </div>
+
+        <div class="dor-visual" id="dor-scratch" data-top="assets/img/dor/sketch.jpg">
+          <div class="dor-visual__backdrop">
+            <span>Joia finalizada<br><code>assets/img/dor/joia-final.jpg</code></span>
+          </div>
+          <img class="dor-visual__bottom" src="assets/img/dor/joia-final.jpg" alt="Joia finalizada" onerror="this.style.display='none'">
+          <canvas class="dor-visual__canvas"></canvas>
+          <p class="dor-visual__hint">Passe o cursor pra revelar</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="como-funciona container">
+      <p class="eyebrow">Como funciona?</p>
+      <h2>Da sua ideia ao protótipo, em 4 passos</h2>
+
+      <div class="step step--left">
+        <div class="step-media">
+          <img src="assets/img/como-funciona/step-1-desenhando.png" alt="Cliente desenhando a ideia da joia">
+        </div>
+        <div class="step-text">
+          <p class="step-number">1</p>
+          <h3>Você compartilha sua ideia</h3>
+          <p>Pode ser um desenho, uma foto de referência, ou só a descrição do que você imagina. Não precisa saber nada de 3D.</p>
+        </div>
+      </div>
+
+      <div class="step step--right">
+        <div class="step-media">
+          <img src="assets/img/como-funciona/step-2-prototipo.png" alt="Modelo 3D da joia sendo criado">
+        </div>
+        <div class="step-text">
+          <p class="step-number">2</p>
+          <h3>A gente modela sua joia em 3D</h3>
+          <!-- TODO: no Figma esse parágrafo repete o texto do passo 1 ("Pode ser um desenho..."), que não fala de modelagem 3D. Provavelmente copy ainda não escrita — confirmar com Hugo/Maíra antes de finalizar. -->
+          <p>Pode ser um desenho, uma foto de referência, ou só a descrição do que você imagina. Não precisa saber nada de 3D.</p>
+        </div>
+      </div>
+
+      <div class="step step--left">
+        <div class="step-media">
+          <img src="assets/img/como-funciona/step-3-impresso.png" alt="Peça impressa em resina para joalheria">
+        </div>
+        <div class="step-text">
+          <p class="step-number">3</p>
+          <h3>Imprimimos em resina específica para joalheria</h3>
+          <p>Uma resina especial, que reproduz cada detalhe da peça e já sai pronta para o processo de fundição.</p>
+        </div>
+      </div>
+
+      <div class="step step--right">
+        <div class="step-media">
+          <img src="assets/img/como-funciona/step-4-pronto.jpg" alt="Protótipo pronto na mão do cliente">
+        </div>
+        <div class="step-text">
+          <p class="step-number">4</p>
+          <h3>Você recebe seu protótipo</h3>
+          <p>A peça física na sua mão, pronta pra seguir pra produção. Sua ideia, materializada.</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h2>Já dá pra imaginar a sua primeira peça?</h2>
+        <a href="https://wa.me/5511975155235?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20projeto%20de%20joia." target="_blank" rel="noopener noreferrer" class="btn-primary">Pedir orçamento</a>
+      </div>
+    </section>
+
+    <section class="portfolio container">
+      <p class="eyebrow">Portfólio</p>
+      <h2>Joias que começaram como uma ideia</h2>
+      <p>Cada peça aqui nasceu de um esboço, de uma foto ou só de uma vontade de criar. Hoje elas existem, e a próxima pode ser a sua.</p>
+
+      <div class="portfolio-slideshow" id="portfolio-slideshow">
+        <div class="portfolio-slideshow__slide is-active">
+          <img src="assets/img/portfolio/deriva.webp" alt="Anel Deriva, pedra azul">
+        </div>
+        <div class="portfolio-slideshow__slide">
+          <img src="assets/img/portfolio/encontro.webp" alt="Anel Encontro, pedra roxa">
+        </div>
+        <div class="portfolio-slideshow__slide">
+          <img src="assets/img/portfolio/solsticio.webp" alt="Anel Solstício, pedra champagne">
+        </div>
+        <div class="portfolio-slideshow__slide">
+          <img src="assets/img/portfolio/vertice.webp" alt="Anel Vértice, pedra verde">
+        </div>
+        <div class="portfolio-slideshow__slide">
+          <img src="assets/img/portfolio/bracelete.jpg" alt="Pulseira com pedras olho-de-tigre">
+        </div>
+
+        <div class="portfolio-slideshow__dots"></div>
+      </div>
+
+      <a href="https://www.ilumiluz.com.br" target="_blank" rel="noopener noreferrer" class="btn-primary portfolio-cta">Conhecer a loja Ilumiluz</a>
+    </section>
+
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
