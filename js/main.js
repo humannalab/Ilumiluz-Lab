@@ -242,12 +242,12 @@ function initPortfolioSlideshow() {
   const root = document.getElementById('portfolio-slideshow');
   if (!root) return;
 
+  const track = root.querySelector('.portfolio-slideshow__track');
   const slides = Array.from(root.querySelectorAll('.portfolio-slideshow__slide'));
   const dotsWrap = root.querySelector('.portfolio-slideshow__dots');
-  if (!slides.length) return;
+  if (!track || !slides.length) return;
 
-  let current = slides.findIndex((slide) => slide.classList.contains('is-active'));
-  if (current < 0) current = 0;
+  let current = 0;
 
   const dots = slides.map((_, i) => {
     const dot = document.createElement('button');
@@ -261,10 +261,9 @@ function initPortfolioSlideshow() {
   });
 
   function goTo(index) {
-    slides[current].classList.remove('is-active');
     dots[current].classList.remove('is-active');
     current = index;
-    slides[current].classList.add('is-active');
+    track.style.transform = `translateX(-${current * 100}%)`;
     dots[current].classList.add('is-active');
   }
 
