@@ -279,10 +279,24 @@ function initPortfolioSlideshow() {
   });
 }
 
+function initIdeaForm() {
+  const form = document.getElementById('idea-form');
+  const done = document.getElementById('form-done');
+  if (!form || !done) return;
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    form.style.display = 'none';
+    done.classList.add('is-visible');
+    done.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initHeroParticles();
   revealHero();
   initScratchReveal();
   initStepReveal();
   initPortfolioSlideshow();
+  initIdeaForm();
 });

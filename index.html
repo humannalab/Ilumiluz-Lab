@@ -72,8 +72,7 @@ A tecnologia 3D encurta esse caminho, e é exatamente por isso que a gente exist
         <div class="step-text">
           <p class="step-number">2</p>
           <h3>A gente modela sua joia em 3D</h3>
-          <!-- TODO: no Figma esse parágrafo repete o texto do passo 1 ("Pode ser um desenho..."), que não fala de modelagem 3D. Provavelmente copy ainda não escrita — confirmar com Hugo/Maíra antes de finalizar. -->
-          <p>Pode ser um desenho, uma foto de referência, ou só a descrição do que você imagina. Não precisa saber nada de 3D.</p>
+          <p>Nossa equipe transforma sua ideia em um modelo preciso, usando os melhores softwares do mercado, ajustando cada detalhe com você.</p>
         </div>
       </div>
 
@@ -136,7 +135,165 @@ A tecnologia 3D encurta esse caminho, e é exatamente por isso que a gente exist
       <a href="https://www.ilumiluz.com.br" target="_blank" rel="noopener noreferrer" class="btn-accent portfolio-cta">Conhecer a loja Ilumiluz →</a>
     </section>
 
+    <section class="servicos container">
+      <p class="eyebrow">Serviços e preço</p>
+      <h2>Um caminho simples, do jeito que cabe no seu momento</h2>
+      <p class="servicos-lead">Você pode contratar cada etapa separada ou as duas juntas, com desconto. Como cada joia é única, o valor final depende da sua peça, mas a gente acredita em começar com clareza, sem você precisar adivinhar.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Modelagem 3D</h3>
+          <p class="price">a partir de <strong>R$ 300</strong></p>
+          <p>A gente transforma sua ideia em um modelo pronto para produção.</p>
+        </div>
+
+        <div class="pricing-card pricing-card--featured">
+          <span class="pricing-tag">Melhor escolha</span>
+          <h3>Pacote completo</h3>
+          <!-- TODO: % de desconto do pacote ainda não definido (ver project_pendencias) — confirmar com Hugo/Maíra antes de publicar -->
+          <p class="price"><strong class="pricing-todo">[X]%</strong> de desconto</p>
+          <p>Modelagem e impressão juntas. A escolha de quem já sabe que quer ver a ideia virar peça.</p>
+        </div>
+
+        <div class="pricing-card">
+          <h3>Impressão do protótipo</h3>
+          <p class="price">a partir de <strong>R$ 30</strong></p>
+          <p>Sua peça ganha forma física, com todos os detalhes, pronta para a fundição. De acordo com o tamanho da peça.</p>
+        </div>
+      </div>
+
+      <p class="pricing-note">A modelagem e a impressão são valores separados. Fechando as duas juntas, você ganha desconto no pacote.</p>
+    </section>
+
+    <section class="quem-somos container">
+      <p class="eyebrow">Quem somos</p>
+      <p class="quote">A gente nasceu <strong>fazendo joias</strong>, não só tecnologia. Quando você cria com a gente, do outro lado tem quem já percorreu o caminho da ideia até a joia no corpo de alguém.</p>
+      <!-- TODO: falta o toque pessoal real (história do Lab / quem está por trás) — ver project_pendencias -->
+      <p class="placeholder-note">Espaço para um toque pessoal: a história de como o Lab nasceu ou quem está por trás</p>
+    </section>
+
+    <section class="conversao container" id="conversa">
+      <p class="eyebrow">Vamos começar</p>
+      <h2>Tudo começa com uma conversa</h2>
+      <p class="conversao-lead">Manda sua ideia do jeito que ela está agora, mesmo que seja só um esboço ou uma vontade. A gente começa com uma conversa pra entender o que você sonha, e dela vêm o orçamento e os próximos passos. Sem compromisso e sem complicação.</p>
+
+      <form class="idea-form" id="idea-form">
+        <div class="field">
+          <label for="tipo">Tipo de peça</label>
+          <select id="tipo" name="tipo">
+            <option value="">Selecione</option>
+            <option>Anel</option>
+            <option>Brinco</option>
+            <option>Pingente</option>
+            <option>Colar</option>
+            <option>Pulseira</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="servico">Qual serviço você quer</label>
+          <select id="servico" name="servico">
+            <option value="">Selecione</option>
+            <option>Só modelagem 3D</option>
+            <option>Só impressão</option>
+            <option>As duas (pacote)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="tem3d">Você já tem o arquivo 3D?</label>
+          <select id="tem3d" name="tem3d">
+            <option value="">Selecione</option>
+            <option>Já tenho o 3D pronto</option>
+            <option>Tenho só a ideia ou referência</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pedras">Tem pedras? Quantas e qual tamanho</label>
+          <input id="pedras" name="pedras" type="text" placeholder="Ex: 1 pedra central pequena">
+        </div>
+        <div class="field field--full">
+          <label for="ref">Uma referência ajuda muito (foto, sketch, inspiração)</label>
+          <input id="ref" name="ref" type="file">
+        </div>
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Como te chamamos">
+        </div>
+        <div class="field">
+          <label for="contato">WhatsApp ou e-mail</label>
+          <input id="contato" name="contato" type="text" placeholder="Pra gente te responder">
+        </div>
+        <div class="field field--full">
+          <label for="primeiro">É seu primeiro projeto de joia? (opcional)</label>
+          <select id="primeiro" name="primeiro">
+            <option value="">Prefiro não dizer</option>
+            <option>Sim, é o meu primeiro</option>
+            <option>Não, já criei antes</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Enviar minha ideia</button>
+          <span class="form-or">ou</span>
+          <a href="https://wa.me/5511975155235?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20projeto%20de%20joia." target="_blank" rel="noopener noreferrer" class="btn-primary">Falar no WhatsApp</a>
+        </div>
+      </form>
+
+      <!-- TODO: formulário só mostra mensagem de sucesso no navegador, não envia os dados a lugar nenhum ainda — falta integrar um backend/serviço de formulário -->
+      <div class="form-done" id="form-done">
+        <h3>Recebemos sua ideia</h3>
+        <p>Logo a gente começa a conversa pra entender o que você sonha. Obrigada por confiar na Ilumiluz Lab.</p>
+      </div>
+    </section>
+
+    <section class="faq container">
+      <p class="eyebrow">Perguntas frequentes</p>
+      <h2>Ainda com alguma dúvida?</h2>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Preciso saber desenhar ou mexer em programa 3D?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>Não, essa parte é com a gente. E se você já tiver sua peça pronta em 3D, também tudo bem: a gente faz só a impressão.</p>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu só tiver um rascunho no papel ou uma foto de referência?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>É mais que suficiente pra começar. A maioria dos projetos nasce exatamente assim.</p>
+        </details>
+        <details class="faq-item">
+          <summary>A modelagem e a impressão são cobradas juntas?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>São valores separados: a modelagem a partir de R$ 300 e a impressão a partir de R$ 30. Fechando as duas juntas, você ganha desconto no pacote. Se quiser só uma delas, contrata só o que precisa.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona o preço da impressão?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>Depende do tamanho da peça. Começa em R$ 30 para as menores e, para peças maiores, o valor acompanha o volume, a R$ 0,30 por mm³. Quanto maior a joia, mais material e tempo, e o preço segue isso de forma justa.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Que material vocês usam na impressão?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>Uma resina específica para joalheria, de alta precisão, que reproduz cada detalhe e já entrega a peça pronta para o processo de fundição.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quanto tempo demora?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>Depende do projeto e da complexidade da peça. Para uma peça pequena, a gente pede no mínimo uma semana pra organizar a modelagem e a impressão. Projetos mais elaborados levam um pouco mais, e o prazo é sempre combinado com você.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Vocês também fundem a joia?<span class="faq-icon" aria-hidden="true">+</span></summary>
+          <p>A gente faz a modelagem e a impressão do seu protótipo em resina, pronto para a fundição. A fundição em si fica por conta de quem você escolher pra essa etapa.</p>
+        </details>
+      </div>
+    </section>
+
   </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="#conversa" class="btn-primary">Começar uma conversa</a>
+      <p class="site-footer__tagline">Prototipagem 3D de joias · Um braço da Ilumiluz</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5511975155235?text=Ol%C3%A1!%20Quero%20pedir%20um%20or%C3%A7amento%20para%20o%20meu%20projeto%20de%20joia." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.1.1-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3a2.7 2.7 0 0 0-.9 2c0 1.2.9 2.4 1 2.6.1.2 1.7 2.7 4.2 3.7 1.5.6 2.1.7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.3-.2z"/></svg>
+    <span class="whatsapp-float__label">Falar no WhatsApp</span>
+  </a>
 
   <script type="module" src="js/main.js"></script>
 </body>
