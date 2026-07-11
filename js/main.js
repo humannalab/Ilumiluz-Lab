@@ -257,7 +257,7 @@ function initCircularGallery() {
 
   let rotation = 0;
   let hovering = false;
-  const autoSpeed = 0.06;
+  const autoSpeed = 0.072;
 
   function updateOpacity() {
     cards.forEach((card, i) => {
