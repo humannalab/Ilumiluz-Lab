@@ -238,45 +238,58 @@ function initStepReveal() {
   steps.forEach((step) => observer.observe(step));
 }
 
-function initPortfolioSlideshow() {
-  const root = document.getElementById('portfolio-slideshow');
-  if (!root) return;
+function initCircularGallery() {
+  const root = document.getElementById('portfolio-gallery');
+  const ring = document.getElementById('portfolio-gallery-ring');
+  if (!root || !ring) return;
 
-  const track = root.querySelector('.portfolio-slideshow__track');
-  const slides = Array.from(root.querySelectorAll('.portfolio-slideshow__slide'));
-  const dotsWrap = root.querySelector('.portfolio-slideshow__dots');
-  if (!track || !slides.length) return;
+  const cards = Array.from(ring.querySelectorAll('.circular-gallery__card'));
+  if (!cards.length) return;
 
-  let current = 0;
+  const radius = 380;
+  const angleStep = 360 / cards.length;
 
-  const dots = slides.map((_, i) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'portfolio-slideshow__dot';
-    dot.setAttribute('aria-label', `Ir para foto ${i + 1}`);
-    if (i === current) dot.classList.add('is-active');
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
-    return dot;
+  cards.forEach((card, i) => {
+    card.style.transform = `rotateY(${i * angleStep}deg) translateZ(${radius}px)`;
   });
 
-  function goTo(index) {
-    dots[current].classList.remove('is-active');
-    current = index;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots[current].classList.add('is-active');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let rotation = 0;
+  let hovering = false;
+  const autoSpeed = 0.06;
+
+  function updateOpacity() {
+    cards.forEach((card, i) => {
+      const angle = (i * angleStep + rotation) % 360;
+      const normalized = Math.abs(angle > 180 ? 360 - angle : angle);
+      card.style.opacity = Math.max(0.35, 1 - normalized / 180);
+    });
   }
 
-  function next() {
-    goTo((current + 1) % slides.length);
+  updateOpacity();
+
+  if (prefersReducedMotion) {
+    return;
   }
 
-  let timer = setInterval(next, 4000);
+  function animate() {
+    if (!hovering) {
+      rotation += autoSpeed;
+      ring.style.transform = `rotateY(${rotation}deg)`;
+      updateOpacity();
+    }
+    requestAnimationFrame(animate);
+  }
 
-  root.addEventListener('mouseenter', () => clearInterval(timer));
+  root.addEventListener('mouseenter', () => {
+    hovering = true;
+  });
   root.addEventListener('mouseleave', () => {
-    timer = setInterval(next, 4000);
+    hovering = false;
   });
+
+  requestAnimationFrame(animate);
 }
 
 function initIdeaForm() {
@@ -297,6 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
   revealHero();
   initScratchReveal();
   initStepReveal();
-  initPortfolioSlideshow();
+  initCircularGallery();
   initIdeaForm();
 });
