@@ -398,22 +398,41 @@ section {
 
 .dor-visual__hint {
   position: absolute;
-  bottom: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%) scale(1);
   z-index: 2;
   margin: 0;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   font-size: 13px;
+  letter-spacing: 0.02em;
+  text-align: center;
   color: var(--color-text-heading);
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  opacity: 0.7;
+  animation: dor-hint-pulse 2.6s ease-in-out infinite;
+  transition: opacity 0.5s ease;
 }
 
 .dor-visual__hint.is-hidden {
   opacity: 0;
+  animation: none;
+}
+
+@keyframes dor-hint-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
 }
 
 @media (max-width: 900px) {
