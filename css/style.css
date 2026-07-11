@@ -26,7 +26,7 @@
   --font-body: 'Montserrat', sans-serif;
 
   --content-width: 1280px;
-  --side-margin: 80px;
+  --side-margin: clamp(20px, 6vw, 80px);
 }
 
 * {
@@ -146,7 +146,7 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: clamp(30px, 5vw, 48px);
   line-height: 1.2;
 }
 
@@ -263,7 +263,7 @@ h2 {
 /* Sections */
 
 section {
-  padding: 160px 0;
+  padding: clamp(64px, 14vw, 160px) 0;
 }
 
 /* Hero */
@@ -276,7 +276,7 @@ section {
   justify-content: center;
   overflow: hidden;
   text-align: center;
-  padding: 160px 0;
+  padding: clamp(100px, 20vw, 160px) 0;
 }
 
 .hero-canvas {
@@ -335,7 +335,7 @@ section {
 .dor-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: clamp(32px, 6vw, 80px);
   align-items: center;
 }
 
@@ -420,33 +420,6 @@ section {
   .dor-grid {
     grid-template-columns: 1fr;
   }
-
-  .step {
-    grid-template-columns: 1fr;
-  }
-
-  .step--left .step-media,
-  .step--left .step-text,
-  .step--right .step-media,
-  .step--right .step-text {
-    grid-column: 1;
-  }
-
-  .step--left .step-media {
-    grid-row: 1;
-  }
-
-  .step--left .step-text {
-    grid-row: 2;
-  }
-
-  .step--right .step-media {
-    grid-row: 1;
-  }
-
-  .step--right .step-text {
-    grid-row: 2;
-  }
 }
 
 /* Como funciona */
@@ -457,34 +430,31 @@ section {
 
 .step {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
-  column-gap: 80px;
-  margin-top: 240px;
+  column-gap: clamp(24px, 6vw, 80px);
+  row-gap: 40px;
+  margin-top: clamp(80px, 16vw, 240px);
 }
 
 .step:first-child {
-  margin-top: 165px;
+  margin-top: clamp(60px, 10vw, 165px);
 }
 
 .step--left .step-media {
-  grid-column: 2;
-  grid-row: 1;
+  order: 2;
 }
 
 .step--left .step-text {
-  grid-column: 1;
-  grid-row: 1;
+  order: 1;
 }
 
 .step--right .step-media {
-  grid-column: 1;
-  grid-row: 1;
+  order: 1;
 }
 
 .step--right .step-text {
-  grid-column: 2;
-  grid-row: 1;
+  order: 2;
 }
 
 .step-media {
@@ -527,7 +497,7 @@ section {
 .step-number {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 240px;
+  font-size: clamp(64px, 16vw, 240px);
   line-height: 1;
   color: var(--color-text-heading);
   margin: 0 0 16px;
@@ -536,7 +506,7 @@ section {
 .step-text h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 48px;
+  font-size: clamp(26px, 4.5vw, 48px);
   line-height: 1.2;
   color: var(--color-text-heading);
   margin: 0 0 24px;
@@ -548,7 +518,7 @@ section {
 
 .como-funciona .cta {
   text-align: center;
-  margin-top: 240px;
+  margin-top: clamp(80px, 16vw, 240px);
 }
 
 .como-funciona .cta h2 {
