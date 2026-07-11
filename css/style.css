@@ -15,8 +15,8 @@
 }
 
 :root {
-  --color-bg: #121111;
-  --color-header-overlay: rgba(20, 18, 18, 0.55);
+  --color-bg: #19050d;
+  --color-header-overlay: rgba(25, 5, 13, 0.55);
   --color-text-body: #c8c8c8;
   --color-text-heading: #ffffff;
   --color-surface: rgba(255, 255, 255, 0.1);
@@ -297,9 +297,9 @@ section {
   z-index: 1;
   background: radial-gradient(
     ellipse 720px 460px at center,
-    rgba(18, 17, 17, 0.65) 0%,
-    rgba(18, 17, 17, 0.4) 45%,
-    rgba(18, 17, 17, 0) 75%
+    rgba(25, 5, 13, 0.65) 0%,
+    rgba(25, 5, 13, 0.4) 45%,
+    rgba(25, 5, 13, 0) 75%
   );
   pointer-events: none;
 }
@@ -811,7 +811,7 @@ section {
 }
 
 .field select option {
-  background: #2a2626;
+  background: #2a0f16;
   color: var(--color-text-heading);
 }
 

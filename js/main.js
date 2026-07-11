@@ -163,7 +163,7 @@ function initScratchReveal() {
         drawImageCover(topImg, canvas.width, canvas.height);
         return;
       }
-      ctx.fillStyle = '#3a3432';
+      ctx.fillStyle = '#3a1a20';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'rgba(255,255,255,0.55)';
       ctx.textAlign = 'center';
